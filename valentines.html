@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding-top: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ff66cc;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Initial 404 Error Page -->
+    <div id="errorPage">
+        <h1>404 Error</h1>
+        <p>Oops! Page not found...</p>
+        <button class="button" onclick="showValentinesMessage()">Refresh</button>
+    </div>
+
+    <!-- Valentine's Day Message Section (Initially Hidden) -->
+    <div id="valentinesMessage" class="hidden">
+        <h1 class="message">Happy Valentine's Day, My Love!</h1>
+        <p class="message">You light up my life, and I'm so grateful to have you by my side. 💖</p>
+        <button class="button" onclick="goToYouTube()">Click here for a surprise</button>
+    </div>
+
+    <script>
+        function showValentinesMessage() {
+            document.getElementById('errorPage').classList.add('hidden');
+            document.getElementById('valentinesMessage').classList.remove('hidden');
+        }
+
+        function goToYouTube() {
+            window.location.href = 'https://www.youtube.com/watch?v=zgaCZOQCpp8'; // "Die with a Smile" by Bruno Mars link
+        }
+    </script>
+
+</body>
+</html>
