@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ff66cc; /* Pink background */
+            color: white;
+            padding-top: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        .message {
+            font-size: 32px;
+            color: white;
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ff3399;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ff3385;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+        }
+        .flowers {
+            font-size: 40px;
+            color: #ff99cc;
+        }
+        .additionalMessage {
+            font-size: 28px;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Initial 404 Error Page -->
+    <div id="errorPage">
+        <h1>404 Error</h1>
+        <p>Oops! Page not found...</p>
+        <button class="button" onclick="showValentinesMessage()">Refresh</button>
+    </div>
+
+    <!-- Valentine's Day Message Section (Initially Hidden) -->
+    <div id="valentinesMessage" class="hidden">
+        <h1 class="message">Hello my beautiful love, I wanted to ask you something...</h1>
+        <p class="message">Can you be my Valentine? 💖</p>
+
+        <!-- Yes/No buttons -->
+        <button class="button" onclick="showYesMessage()">Yes</button>
+        <button class="button" onclick="showNoMessage()">No</button>
+    </div>
+
+    <!-- Yes Response -->
+    <div id="yesMessage" class="hidden">
+        <h1 class="message">You light up my world more than words can say! 🌟</h1>
+        <p class="additionalMessage">You make everything better just by being you. I am so lucky to have you in my life. 💖</p>
+        <p class="flowers">🌸🌸🌸</p>
+        <p class="heart">❤️❤️❤️</p>
+        <button class="button" onclick="goToYouTube()">Click here for a surprise!</button>
+    </div>
+
+    <!-- No Response -->
+    <div id="noMessage" class="hidden">
+        <h1 class="message">You can't say no, unfortunately... 😘</h1>
+        <p class="additionalMessage">I’m still asking... will you be my Valentine? 💖</p>
+        <button class="button" onclick="tryAgain()">Try again</button>
+    </div>
+
+    <script>
+        // Function to display Valentine's message after refresh
+        function showValentinesMessage() {
+            document.getElementById('errorPage').classList.add('hidden');
+            document.getElementById('valentinesMessage').classList.remove('hidden');
+        }
+
+        // Function to handle 'Yes' response
+        function showYesMessage() {
+            document.getElementById('valentinesMessage').classList.add('hidden');
+            document.getElementById('yesMessage').classList.remove('hidden');
+        }
+
+        // Function to handle 'No' response
+        function showNoMessage() {
+            document.getElementById('valentinesMessage').classList.add('hidden');
+            document.getElementById('noMessage').classList.remove('hidden');
+        }
+
+        // Function to reset and try again after "No"
+        function tryAgain() {
+            document.getElementById('noMessage').classList.add('hidden');
+            document.getElementById('valentinesMessage').classList.remove('hidden');
+        }
+
+        // Redirect to the YouTube video for the surprise song
+        function goToYouTube() {
+            window.location.href = 'https://www.youtube.com/watch?v=zgaCZOQCpp8'; // "Die with a Smile" by Bruno Mars link
+        }
+    </script>
+
+</body>
+</html>
